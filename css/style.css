@@ -25,13 +25,12 @@ body {
   background-color: #fff;
   transition: 0.5s;
   border: 1px solid #fff;
-  padding: 10px;
+  padding: 10px 0;
   border-radius: 5px;
   min-height: 500px;
 }
 .single-product:hover {
   box-shadow: 4px 4px 7px gray;
-  border-radius: 5px;
   border: 1px solid cyan;
 }
 .product-image {
@@ -62,7 +61,6 @@ body {
   }
   .cart {
     width: 300px;
-    /* border: 1px solid green; */
     padding: 10px;
     box-shadow: 10px 10px 20px gray;
     border-radius: 5px;
