@@ -3,7 +3,6 @@
 
 body {
   background-color: #dbe6fd;
-  /* background-color: #fff; */
   overflow-x: hidden;
   font-family: "Poppins", sans-serif;
 }
@@ -11,10 +10,13 @@ body {
 /* ------------------------------------*|
      STYLE OF MAIN PAGE STARTS HERE 
 |*-------------------------------------*/
+/* Search Field  */
 input#search-btn
 {
   background-color: #FEFBF3;
 }
+
+/* Product Section Starts Here  */
 #all-products {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -46,6 +48,7 @@ input#search-btn
   color: black;
   font-weight: bold;
 }
+/* My Cart Section Starts Here  */
 .cart {
   background-color: #FEFBF3;
   width: 350px;

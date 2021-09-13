@@ -210,7 +210,7 @@ const loadProducts = () => {
   showProducts(data);
 };
 
-// show all product in UI
+// Display All Products
 const showProducts = (products) => {
   const allProducts = products.map((pd) => pd);
   for (const product of allProducts) {
@@ -224,9 +224,7 @@ const showProducts = (products) => {
       </div>
       <h2 class="fw-bold">${titleMinimize}</h2>
       <p class="text-mute"><span class="fw-bold text-dark">Category:</span> ${product.category}</p>
-
       <p class="fw-bold">Ratings: <span class="text-warning"> <i class="fas fa-star"></i> ${product.rating.rate}</span> (${product.rating.count})</p>
-      
       <h4 class="fw-bold">Price: <span class="text-danger">$${product.price}</span></h4>
       <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="button btn  btn-sm  btn-outline-success">Add To Cart</button>
       <button id="details-btn" class="button btn btn-sm btn-outline-primary">Details</button></div>`;
@@ -234,6 +232,7 @@ const showProducts = (products) => {
   }
 };
 
+// Update Cart Info
 let count = 0;
 const addToCart = (id, price) => {
   count = count + 1;
@@ -242,14 +241,14 @@ const addToCart = (id, price) => {
   updateTaxAndCharge();
   document.getElementById("total-Products").innerText = count;
 };
-
+// Getting Input Value 
 const getInputValue = (id) => {
   const element = document.getElementById(id).innerText;
   const converted = parseFloat(element);
   return converted;
 };
 
-// main price update function
+// Main Price Update Function
 const updatePrice = (id, value) => {
   const convertedOldPrice = getInputValue(id);
   const convertPrice = parseFloat(value);
@@ -258,12 +257,12 @@ const updatePrice = (id, value) => {
   updateTotal();
 };
 
-// set innerText function
+// Set InnerText Function
 const setInnerText = (id, value) => {
   document.getElementById(id).innerText = value.toFixed(2); // Fixed 2 digit after point
 };
 
-// update delivery charge and total Tax
+// Update Delivery Charge and Total Tax
 const updateTaxAndCharge = () => {
   const priceConverted = getInputValue("price");
   if (priceConverted > 200) {
@@ -281,7 +280,7 @@ const updateTaxAndCharge = () => {
   updateTotal();
 };
 
-//grandTotal update function
+//GrandTotal Update Function
 const updateTotal = () => {
   const grandTotal =
     getInputValue("price") +
