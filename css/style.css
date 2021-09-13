@@ -3,6 +3,7 @@
 
 body {
   background-color: #dbe6fd;
+  /* background-color: #fff; */
   overflow-x: hidden;
   font-family: "Poppins", sans-serif;
 }
@@ -10,11 +11,15 @@ body {
 /* ------------------------------------*|
      STYLE OF MAIN PAGE STARTS HERE 
 |*-------------------------------------*/
+input#search-btn
+{
+  background-color: #FEFBF3;
+}
 #all-products {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  padding: 10px;
+  gap: 20px;
+  padding-left: 20px;
   text-align: center;
   width: 100%;
   margin: auto;
@@ -22,12 +27,12 @@ body {
   justify-content: center;
 }
 .single-product {
-  background-color: #fff;
+  background-color: #FEFBF3;
   transition: 0.5s;
   border: 1px solid #fff;
   padding: 10px 0;
   border-radius: 5px;
-  min-height: 500px;
+  min-height: 400px;
 }
 .single-product:hover {
   box-shadow: 4px 4px 7px gray;
@@ -37,7 +42,12 @@ body {
   width: 150px;
   height: 150px;
 }
+.button{
+  color: black;
+  font-weight: bold;
+}
 .cart {
+  background-color: #FEFBF3;
   width: 350px;
   border: 1px solid #fff;
   padding: 10px;

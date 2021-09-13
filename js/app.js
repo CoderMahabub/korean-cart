@@ -215,22 +215,25 @@ const showProducts = (products) => {
   const allProducts = products.map((pd) => pd);
   for (const product of allProducts) {
     const image = product.image;
+    const titleMinimize = product.title.slice(0,25);
     const div = document.createElement("div");
     div.classList.add("product");
     div.innerHTML = `<div class="single-product">
       <div>
     <img class="product-image" src=${image}></img>
       </div>
-      <h2 class="fw-bold">${product.title}</h2>
-      <p><span class="fw-bold">Category:</span> ${product.category}</p>
-      <p class="fw-bold">Ratings: <span class="text-warning">  ${product.rating.rate}</span> & Reviewers: <span class="text-warning"> ${product.rating.count} </span></p>
-      <h3><span class="fw-bold">Price:</span> $${product.price}</h3>
-      <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success">Add To Cart</button>
-      <button id="details-btn" class="btn btn-primary">Details</button></div>
-      `;
+      <h2 class="fw-bold">${titleMinimize}</h2>
+      <p class="text-mute"><span class="fw-bold text-dark">Category:</span> ${product.category}</p>
+
+      <p class="fw-bold">Ratings: <span class="text-warning"> <i class="fas fa-star"></i> ${product.rating.rate}</span> (${product.rating.count})</p>
+      
+      <h4 class="fw-bold">Price: <span class="text-danger">$${product.price}</span></h4>
+      <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="button btn  btn-sm  btn-outline-success">Add To Cart</button>
+      <button id="details-btn" class="button btn btn-sm btn-outline-primary">Details</button></div>`;
     document.getElementById("all-products").appendChild(div);
   }
 };
+
 let count = 0;
 const addToCart = (id, price) => {
   count = count + 1;
@@ -263,10 +266,6 @@ const setInnerText = (id, value) => {
 // update delivery charge and total Tax
 const updateTaxAndCharge = () => {
   const priceConverted = getInputValue("price");
-  if (priceConverted > 0) {
-    setInnerText("delivery-charge", 20);
-    setInnerText("total-tax", priceConverted * 0.2);
-  }
   if (priceConverted > 200) {
     setInnerText("delivery-charge", 30);
     setInnerText("total-tax", priceConverted * 0.2);
