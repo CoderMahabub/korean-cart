@@ -31,7 +31,7 @@ input#search-btn
 .single-product {
   background-color: #FEFBF3;
   transition: 0.5s;
-  border: 2px solid #fff;
+  border: 2px solid #FEFBF3;
   padding: 10px 0;
   border-radius: 5px;
   min-height: 400px;
