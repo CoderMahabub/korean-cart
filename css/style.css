@@ -38,7 +38,7 @@ input#search-btn
 }
 .single-product:hover {
   box-shadow: 4px 4px 7px gray;
-  border: 1px solid cyan;
+  border: 2px solid green;
 }
 .product-image {
   width: 150px;
